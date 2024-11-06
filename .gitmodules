@@ -1,1 +1,3 @@
-
+[submodule "pyutils25"]
+	path = pyutils25
+	url = https://github.com/CG-SHOP/pyutils25.git
