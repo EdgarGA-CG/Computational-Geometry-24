@@ -24,24 +24,10 @@ fig, axs = plt.subplots(2)
 # Compute solutions for all instances using the provided (naive) solver
 solutions = []
 for instance in idb:
-    # uid = instance.instance_uid
-    # points_x = instance.points_x
-    # points_y = instance.points_y
-    # num_points = instance.num_points
-    # print(uid)
-    # print(points_x)
-    # print(points_y)
-    # print(num_points)
     solver = DelaunayBasedSolver(instance) # Call class/function to get the solution
     solution = solver.solve()
     solutions.append(solution)
     #visualization.plot_instance(axs[0],instance)
-
-# sol_edges = solutions[0].edges # Index zero to get solution for 
-# for edge in sol_edges:
-#     axs[0].plot([points_x[edge[0]],points_x[edge[1]]],[points_y[edge[0]],points_y[edge[1]]])
-
-#plt.show()
 
 # Write the solutions to a new zip file
 with ZipWriter("example_solutions.zip") as zw:
