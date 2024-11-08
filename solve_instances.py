@@ -20,14 +20,12 @@ idb = InstanceDatabase("example_instances/")
 if Path("example_solutions.zip").exists():
     Path("example_solutions.zip").unlink()
 
-fig, axs = plt.subplots(2)
 # Compute solutions for all instances using the provided (naive) solver
 solutions = []
 for instance in idb:
     solver = DelaunayBasedSolver(instance) # Call class/function to get the solution
     solution = solver.solve()
     solutions.append(solution)
-    #visualization.plot_instance(axs[0],instance)
 
 # Write the solutions to a new zip file
 with ZipWriter("example_solutions.zip") as zw:
