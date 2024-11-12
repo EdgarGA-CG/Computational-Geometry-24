@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+ 
+\begin{document}
+ 
+\title{Nonobtuse Triangulation of PSLGs}
+\author{}
+\date{11/11/2024}
+\maketitle
+ 
+\section{Pseudocode for nonobtuse triangulation of a PSLG}
+\begin{algorithm}
+\caption{Nonobtuse triangulation of a PSLG}
+\begin{algorithmic}[1]
+ 
+\State \textbf{Input:} A PSLG $\Gamma$ with $n$ vertices.
+\State \textbf{Output:} A nonobtuse triangulation of $\Gamma$.
+ 
+\State Initialize vertex set $V$ from the vertices of $\Gamma$.
+\State Initialize empty set $T$ for storing triangles.
+\State Initialize empty list $R$ for Steiner points.
+ 
+\State \textbf{Triangulation of the PSLG}
+        \State Apply a standard triangulation algorithm to create an initial set of triangles $T$.
+ 
+\State \textbf{Make Gabriel all the Triangles from $T$}
+\For{each triangle $t \in T$}
+         \If{an edge is not a Gabriel edge}
+            \State Get the incenter of $t$
+            \State  Draw circular sections from the vertices of $t$ with radius of the length from $t$ to the tangent point of the incenter
+            \For{each vertex of $t$}
+                \State Save the difference of the radius and the distance of from the vertex to the center of the circle
+                \State Use that measure to draw a new semicircle on the tangent point colinear to the vertex and the center
+                \State Redraw the affected circles using the nearest point of the semicircle as radius(4) 
+            \EndFor
+            \State Add this vertices temporary to $R$ 
+            \State Save the incenter of each triangle
+        \EndIf
+        \EndFor
+\For{each triangle $t \in T$}
+    Use the incenters to add new temporary Steiner points to all the adjacent triangles parallel to the temporary Steiner points of that triangle
+    Save the new Steiner points in $R$
+\EndFor
+\For{each triangle $t \in T$}
+    \State Add a Steiner point at the midpoint of two vertices.
+    \State Add the difference between these points and the temporary Steiner points to a list of radii 
+    \State Add to $R$ the new Steiner point.
+    \State Pack interior with disjoint disks to the Gabriel edges 
+    \State Save the radii on the radii list
+    \State Delete all the temporary Steiner points
+    \State Add to $T$ the updated list with the Steiner points
+    \State Join all the centers and midpoints to produce 3-sided and 4-sided regions remain
+    \State Save those edges as a region $P \in $t
+\EndFor
+\State \textbf{Triangulation of the remaining regions}
+\For{each triangle $t \in T$}
+    \For{each region $P \in t$}
+      \State Triangulate following the 3 sided case or the 4 sided case  
+      \If{$P$ is of three sides}
+        \State Add center of circle through the three tangent points.
+•       \State Connect center to tangent points and centers of circles
+      \EndIf
+      \If{$P$ is of four sides}
+        \State Add center of circle through the three tangent points.
+•       \State Connect center to tangent points and centers of circles
+        \State Connect the remaining vertex so that we have right angles
+      \EndIf
+\EndFor
+\EndFor
+ 
+ 
+\State \textbf{Output:} Return the set of triangles $T$.
+ 
+\end{algorithmic}
+\end{algorithm}
+ 
+\newpage
+ 
+ 
+\section{Remarks}
+ 
+(1)In order to triangulate and to make gabriel a triangle, one has to use the perpendicular bisector to add at least one point to each side of the triangle. If the new set of vertices are still not gabriel, add more midpoints to make it gabriel.
+ 
+\includegraphics[width=10cm]{images/Triangulation BMR.png}
+\centering
+\\
+\raggedright
+(2)One method to triangulate PSLG is the delaunay triangulation
+ 
+\includegraphics[width=5cm]{images/Delaunay.png}
+\centering
+ 
+\newpage
+\raggedright
+(3)Packing the remaining of the triangle with disjoint circles
+ 
+\includegraphics[width=10cm]{images/Disjoint.png}
+\centering
+ 
+\raggedright
+(4)Process of getting Gabriel points
+ 
+\includegraphics[width=10cm]{images/1.png}
+\centering
+\includegraphics[width=10cm]{images/2.png}
+\
+\end{document}
