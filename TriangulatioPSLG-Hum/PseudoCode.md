@@ -32,7 +32,7 @@
    - Ensure all triangles have nonobtuse angles.
 
 ---
-
+Esto fue editado por joel.
 **Output:** Return the set of triangles $T$.
 
 ## Remarks
