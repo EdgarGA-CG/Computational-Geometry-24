@@ -1,6 +1,6 @@
 # GIT Tutorial
 
-Here you can find the recomended steps to use Git andt Github.
+Here you can find the recomended steps to use Git andt Github using VSCode as interface.
 
 Assuming that you already have a local git repository, follow the next steps:
 
