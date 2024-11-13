@@ -1,5 +1,5 @@
 # Computational-Geometry-24
-An interactive space to implemente computational geometry concepts. 
+An interactive space to implement computational geometry concepts. 
 
 # Dependencies
 Before use the utilites of this repo, ensure resolve next dependencies:

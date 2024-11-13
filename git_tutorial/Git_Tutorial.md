@@ -1,3 +1,11 @@
+# Prerequisites
+
+Install Git graph extesion in VSC
+![](media/git_graph_extension.png)
+
+You can open the git graph view with next button
+![](media/git_graph_button.png)
+
 # GIT Tutorial
 
 Here you can find the recomended steps to use Git andt Github using VSCode as interface.
