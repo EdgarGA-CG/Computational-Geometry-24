@@ -20,3 +20,9 @@ Assuming that you already have a local git repository, follow the next steps:
 
 3. `Push branch`: Now that you have the mew branch and the commit (or commits) in your local repo, next step is push your branch to the remote repo.
 ![](media/push_changes.gif)
+
+# FAQ
+
+Q:`I want to deliver changes but someone deliver his changes before. How can I deliver my changes without affect changes that are not mine?`
+A: You have to merge your changes with the latest changes, sometimes it will be necessary to resolve merge conflicts(if both branches contains changes in same files and lines) if not merge conflict were found by git then merge will be done automatically and once it is completed you can push your changes, just make sure your commint doesn't contain any changes you didn't make.
+![](media/merge.gif)
