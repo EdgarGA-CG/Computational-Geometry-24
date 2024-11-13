@@ -1,6 +1,17 @@
 # Computational-Geometry-24
 An interactive space to implemente computational geometry concepts. 
 
+# Dependencies
+Before use the utilites of this repo, ensure resolve next dependencies:
+
+```bash
+#Install python libraries
+
+pip install cgshop2025_pyutils
+pip install ipywidgets
+```
+
+
 # How to use python scripts
 
 Execute next scripts in proposed order.
