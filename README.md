@@ -11,6 +11,10 @@ pip install cgshop2025_pyutils
 pip install ipywidgets
 ```
 
+# Jupyter notebooks
+
+`Instance_SolveAndGraph.ipynb` : Resolve instances located in **example_instances** folder and graph the points and solution of the selected instance 
+
 
 # How to use python scripts
 
