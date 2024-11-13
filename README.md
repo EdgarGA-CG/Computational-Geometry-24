@@ -2,7 +2,7 @@
 An interactive space to implement computational geometry concepts. 
 
 # Dependencies
-Before use the utilites of this repo, ensure resolve next dependencies:
+Before use the utilites of this repo, ensure resolve next dependencies (make sure that you have the latest python version, 3.13):
 
 ```bash
 #Install python libraries
