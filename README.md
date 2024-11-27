@@ -9,6 +9,7 @@ Before use the utilites of this repo, ensure resolve next dependencies (make sur
 
 pip install cgshop2025_pyutils
 pip install ipywidgets
+pip install scipy
 ```
 
 # Jupyter notebooks
